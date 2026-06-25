@@ -1,7 +1,12 @@
+import PixelFace from "@/components/PixelFace";
+
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center px-4 py-20 text-center gap-6">
-      <h1 className="text-2xl sm:text-3xl">🥕 아나바다 마켓</h1>
+      <h1 className="text-2xl sm:text-3xl flex items-center justify-center gap-3">
+        <PixelFace size={40} />
+        아나바다 마켓
+      </h1>
       <p className="text-xs sm:text-sm max-w-md leading-relaxed">
         아껴쓰고, 나눠쓰고, 바꿔쓰고, 다시쓰는
         <br />

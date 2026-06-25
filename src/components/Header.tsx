@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import LogoutButton from "@/components/LogoutButton";
+import PixelFace from "@/components/PixelFace";
 
 export default async function Header() {
   const supabase = await createClient();
@@ -9,8 +10,12 @@ export default async function Header() {
 
   return (
     <header className="border-b-4 border-pixel-black bg-pixel-cream px-4 py-3 flex items-center justify-between">
-      <Link href="/" className="text-base sm:text-lg tracking-tight">
-        🥕 아나바다
+      <Link
+        href="/"
+        className="text-base sm:text-lg tracking-tight flex items-center gap-2"
+      >
+        <PixelFace size={24} />
+        아나바다
       </Link>
 
       <nav className="flex items-center gap-3 text-xs sm:text-sm">
