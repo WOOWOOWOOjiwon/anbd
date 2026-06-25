@@ -72,7 +72,7 @@ export default async function EditProductPage({
               name="price"
               required
               min={0}
-              step={100}
+              step={1}
               defaultValue={product.price}
               className="pixel-input px-3 py-2 text-sm"
             />

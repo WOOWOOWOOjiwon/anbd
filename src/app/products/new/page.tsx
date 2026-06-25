@@ -50,7 +50,7 @@ export default async function NewProductPage({
               name="price"
               required
               min={0}
-              step={100}
+              step={1}
               placeholder="0"
               className="pixel-input px-3 py-2 text-sm"
             />
