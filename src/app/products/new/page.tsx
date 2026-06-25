@@ -67,6 +67,17 @@ export default async function NewProductPage({
             />
           </label>
 
+          <label className="flex flex-col gap-1 text-xs">
+            사진 (최대 5장, 한 장당 5MB까지)
+            <input
+              type="file"
+              name="images"
+              accept="image/*"
+              multiple
+              className="pixel-input px-3 py-2 text-xs file:mr-3 file:border-2 file:border-pixel-black file:bg-pixel-cream file:px-2 file:py-1 file:text-xs file:cursor-pointer"
+            />
+          </label>
+
           <div className="flex gap-2 mt-2">
             <Link
               href="/products"

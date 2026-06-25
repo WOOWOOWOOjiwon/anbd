@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import { publicImageUrl } from "@/lib/storage";
 import DeleteButton from "@/components/DeleteButton";
 import type { Product } from "@/lib/types";
 
@@ -45,6 +46,20 @@ export default async function ProductDetailPage({
       )}
 
       <div className="pixel-card p-6 mt-4 flex flex-col gap-4">
+        {product.image_paths.length > 0 && (
+          <div className="flex flex-col gap-3">
+            {product.image_paths.map((path) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                key={path}
+                src={publicImageUrl(path)}
+                alt={product.title}
+                className="product-photo w-full pixel-border"
+              />
+            ))}
+          </div>
+        )}
+
         <div className="flex items-start justify-between gap-3">
           <h1 className="text-lg sm:text-xl break-keep">{product.title}</h1>
           {product.status === "sold" && (

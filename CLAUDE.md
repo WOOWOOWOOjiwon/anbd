@@ -58,5 +58,7 @@ export NVM_DIR="$HOME/.nvm"; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"; nv
 
 - 회원가입 / 로그인 / 로그아웃 (이메일 인증 포함)
 - 픽셀 아트 기본 디자인
-- 판매글 CRUD: 목록 보기 / 자세히 보기 / 글쓰기 / 수정 / 삭제 (사진 기능 제외)
+- 판매글 CRUD: 목록 보기 / 자세히 보기 / 글쓰기 / 수정 / 삭제
   - 누구나 글을 볼 수 있고, 수정·삭제는 글쓴이만 가능 (Supabase RLS 보안 적용)
+  - 사진 첨부: 글(텍스트)은 DB(`products` 표)에, 사진(파일)은 Storage(`product-images` 버킷)에 분리 보관
+    (한 글당 최대 5장, DB에는 사진 위치 `image_paths`만 저장)

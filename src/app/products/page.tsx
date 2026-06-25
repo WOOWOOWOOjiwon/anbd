@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
+import { publicImageUrl } from "@/lib/storage";
 import type { Product } from "@/lib/types";
 
 export default async function ProductsPage() {
@@ -46,6 +47,18 @@ export default async function ProductsPage() {
                 href={`/products/${product.id}`}
                 className="pixel-card p-4 flex flex-col gap-2 h-full hover:translate-x-[2px] hover:translate-y-[2px] transition-transform"
               >
+                {product.image_paths.length > 0 ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={publicImageUrl(product.image_paths[0])}
+                    alt=""
+                    className="product-photo w-full aspect-square object-cover pixel-border"
+                  />
+                ) : (
+                  <div className="w-full aspect-square pixel-border bg-pixel-cream flex items-center justify-center text-[10px] text-pixel-black/40">
+                    사진 없음
+                  </div>
+                )}
                 <div className="flex items-start justify-between gap-2">
                   <h2 className="text-sm break-keep">{product.title}</h2>
                   {product.status === "sold" && (

@@ -27,6 +27,11 @@
   image-rendering: pixelated;
 }
 
+/* 실제 업로드한 사진은 픽셀 처리 없이 또렷하게 보이도록 한다. */
+.product-photo {
+  image-rendering: auto;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
