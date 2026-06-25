@@ -5,7 +5,9 @@ export default function Home() {
       <p className="text-xs sm:text-sm max-w-md leading-relaxed">
         아껴쓰고, 나눠쓰고, 바꿔쓰고, 다시쓰는
         <br />
-        우리 동네 중고거래 마켓이에요. 회원가입 후 물건을 올리고 거래해보세요!
+        우리 동네 중고거래 마켓이에요.
+        <br />
+        회원가입 후 물건을 올리고 거래해보세요!
       </p>
 
       <div className="pixel-card px-8 py-6 mt-4">
