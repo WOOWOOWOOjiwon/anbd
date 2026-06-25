@@ -1,3 +1,4 @@
+import Link from "next/link";
 import PixelFace from "@/components/PixelFace";
 
 export default function Home() {
@@ -15,8 +16,19 @@ export default function Home() {
         회원가입 후 물건을 올리고 거래해보세요!
       </p>
 
-      <div className="pixel-card px-8 py-6 mt-4">
-        <p className="text-xs">🛠️ 상품 등록 기능은 곧 추가될 예정이에요</p>
+      <div className="flex flex-col sm:flex-row gap-3 mt-4">
+        <Link
+          href="/products"
+          className="pixel-btn bg-pixel-blue px-6 py-3 text-white text-sm"
+        >
+          🛒 물건 구경하기
+        </Link>
+        <Link
+          href="/products/new"
+          className="pixel-btn bg-pixel-green px-6 py-3 text-white text-sm"
+        >
+          ✏️ 물건 팔기
+        </Link>
       </div>
     </div>
   );

@@ -19,6 +19,9 @@ export default async function Header() {
       </Link>
 
       <nav className="flex items-center gap-3 text-xs sm:text-sm">
+        <Link href="/products" className="underline underline-offset-4">
+          둘러보기
+        </Link>
         {user ? (
           <>
             <span className="hidden sm:inline">
