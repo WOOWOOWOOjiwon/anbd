@@ -3,6 +3,7 @@ import { notFound, redirect } from "next/navigation";
 import { updateProduct } from "@/lib/actions/products";
 import { createClient } from "@/lib/supabase/server";
 import { publicImageUrl } from "@/lib/storage";
+import PixelEmoji from "@/components/PixelEmoji";
 import type { Product } from "@/lib/types";
 
 export default async function EditProductPage({
@@ -43,7 +44,10 @@ export default async function EditProductPage({
   return (
     <div className="flex items-center justify-center px-4 py-12">
       <div className="pixel-card w-full max-w-md p-6">
-        <h1 className="text-lg mb-6 text-center">🛠️ 판매글 수정</h1>
+        <h1 className="text-lg mb-6 text-center flex items-center justify-center gap-2">
+          <PixelEmoji name="fire" size={22} />
+          매물 손보기
+        </h1>
 
         {error && (
           <p className="pixel-border bg-pixel-pink/20 text-xs p-2 mb-4 text-center">
@@ -133,8 +137,8 @@ export default async function EditProductPage({
               defaultValue={product.status}
               className="pixel-input px-3 py-2 text-sm"
             >
-              <option value="selling">판매중</option>
-              <option value="sold">판매완료</option>
+              <option value="selling">팔리는 중</option>
+              <option value="sold">처분완료</option>
             </select>
           </label>
 
@@ -143,13 +147,13 @@ export default async function EditProductPage({
               href={`/products/${product.id}`}
               className="pixel-btn bg-pixel-cream px-3 py-2 text-xs flex-1 text-center"
             >
-              취소
+              관두기
             </Link>
             <button
               type="submit"
               className="pixel-btn bg-pixel-blue text-white py-2 text-sm flex-1"
             >
-              저장하기
+              다시 걸기
             </button>
           </div>
         </form>

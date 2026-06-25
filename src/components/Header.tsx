@@ -2,6 +2,7 @@ import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import LogoutButton from "@/components/LogoutButton";
 import PixelFace from "@/components/PixelFace";
+import PixelEmoji from "@/components/PixelEmoji";
 
 export default async function Header() {
   const supabase = await createClient();
@@ -19,13 +20,17 @@ export default async function Header() {
       </Link>
 
       <nav className="flex items-center gap-3 text-xs sm:text-sm">
-        <Link href="/products" className="underline underline-offset-4">
-          둘러보기
+        <Link
+          href="/products"
+          className="flex items-center gap-1 underline underline-offset-4"
+        >
+          <PixelEmoji name="coin" size={16} />
+          줍줍
         </Link>
         {user ? (
           <>
             <span className="hidden sm:inline">
-              {(user.user_metadata?.nickname as string) || user.email} 님
+              {(user.user_metadata?.nickname as string) || user.email} 거지님
             </span>
             <LogoutButton />
           </>

@@ -7,7 +7,7 @@ export default function DeleteButton({ id }: { id: string }) {
     <form
       action={deleteProduct}
       onSubmit={(e) => {
-        if (!confirm("정말 이 판매글을 삭제할까요?")) {
+        if (!confirm("정말 갖다 버릴까요? 한 번 버리면 못 주워요!")) {
           e.preventDefault();
         }
       }}
@@ -17,7 +17,7 @@ export default function DeleteButton({ id }: { id: string }) {
         type="submit"
         className="pixel-btn bg-pixel-pink px-4 py-2 text-white text-xs"
       >
-        삭제
+        갖다버리기
       </button>
     </form>
   );

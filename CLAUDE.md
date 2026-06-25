@@ -62,3 +62,8 @@ export NVM_DIR="$HOME/.nvm"; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"; nv
   - 누구나 글을 볼 수 있고, 수정·삭제는 글쓴이만 가능 (Supabase RLS 보안 적용)
   - 사진 첨부: 글(텍스트)은 DB(`products` 표)에, 사진(파일)은 Storage(`product-images` 버킷)에 분리 보관
     (한 글당 최대 5장, DB에는 사진 위치 `image_paths`만 저장)
+- 좋아요(찜) / 댓글
+  - 좋아요: `product_likes` 표(한 사람이 한 글에 한 번), 누르면 토글
+  - 댓글: `product_comments` 표, 자기 댓글만 삭제 가능 (RLS 적용)
+  - 목록 카드에 좋아요·댓글 수 표시
+- 디자인: "거지맵" 컨셉 밈 문구 + 직접 그린 픽셀 이모지 세트(`PixelEmoji`: 엽전·돈·라면·불·하트·말풍선)

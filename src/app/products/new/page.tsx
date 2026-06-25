@@ -2,6 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createProduct } from "@/lib/actions/products";
 import { createClient } from "@/lib/supabase/server";
+import PixelEmoji from "@/components/PixelEmoji";
 
 export default async function NewProductPage({
   searchParams,
@@ -22,7 +23,10 @@ export default async function NewProductPage({
   return (
     <div className="flex items-center justify-center px-4 py-12">
       <div className="pixel-card w-full max-w-md p-6">
-        <h1 className="text-lg mb-6 text-center">✏️ 판매글 쓰기</h1>
+        <h1 className="text-lg mb-6 text-center flex items-center justify-center gap-2">
+          <PixelEmoji name="moneyFly" size={22} />
+          내다 팔기
+        </h1>
 
         {error && (
           <p className="pixel-border bg-pixel-pink/20 text-xs p-2 mb-4 text-center">
@@ -32,43 +36,43 @@ export default async function NewProductPage({
 
         <form action={createProduct} className="flex flex-col gap-4">
           <label className="flex flex-col gap-1 text-xs">
-            제목
+            뭐 팔아요?
             <input
               type="text"
               name="title"
               required
               maxLength={50}
-              placeholder="예) 거의 새것 자전거 팔아요"
+              placeholder="예) 안 쓰는 거 눈물의 처분합니다"
               className="pixel-input px-3 py-2 text-sm"
             />
           </label>
 
           <label className="flex flex-col gap-1 text-xs">
-            가격 (원)
+            얼마 받게요? (원)
             <input
               type="number"
               name="price"
               required
               min={0}
               step={1}
-              placeholder="0"
+              placeholder="0 (거의 거저면 더 잘 팔려요)"
               className="pixel-input px-3 py-2 text-sm"
             />
           </label>
 
           <label className="flex flex-col gap-1 text-xs">
-            설명
+            구구절절 사연
             <textarea
               name="description"
               rows={5}
               maxLength={1000}
-              placeholder="물건 상태, 거래 방법 등을 적어주세요."
+              placeholder="상태, 거래 방법, 눈물의 사연을 적어주세요."
               className="pixel-input px-3 py-2 text-sm resize-none"
             />
           </label>
 
           <label className="flex flex-col gap-1 text-xs">
-            사진 (최대 5장, 한 장당 5MB까지)
+            물건 자랑 사진 (최대 5장, 한 장당 5MB까지)
             <input
               type="file"
               name="images"
@@ -83,13 +87,13 @@ export default async function NewProductPage({
               href="/products"
               className="pixel-btn bg-pixel-cream px-3 py-2 text-xs flex-1 text-center"
             >
-              취소
+              관두기
             </Link>
             <button
               type="submit"
               className="pixel-btn bg-pixel-green text-white py-2 text-sm flex-1"
             >
-              등록하기
+              팔아치우기
             </button>
           </div>
         </form>

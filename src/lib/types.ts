@@ -12,3 +12,12 @@ export type Product = {
   created_at: string;
   updated_at: string;
 };
+
+export type Comment = {
+  id: string;
+  product_id: string;
+  user_id: string;
+  author_nickname: string;
+  content: string;
+  created_at: string;
+};
