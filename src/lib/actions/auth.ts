@@ -13,7 +13,7 @@ export async function signup(formData: FormData) {
   const headerList = await headers();
   const origin = headerList.get("origin");
 
-  const { error } = await supabase.auth.signUp({
+  const { data, error } = await supabase.auth.signUp({
     email,
     password,
     options: {
@@ -26,6 +26,12 @@ export async function signup(formData: FormData) {
     redirect(`/signup?error=${encodeURIComponent(error.message)}`);
   }
 
+  // 이메일 인증이 꺼져 있으면 가입과 동시에 로그인됨(session 생성) → 바로 홈으로
+  if (data.session) {
+    redirect("/");
+  }
+
+  // 이메일 인증이 켜져 있을 때만 "인증 메일 보냈어요" 안내 화면으로
   redirect("/signup/check-email");
 }
 
