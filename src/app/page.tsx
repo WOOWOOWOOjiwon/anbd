@@ -13,7 +13,7 @@ export default function Home() {
 
       <h1 className="text-2xl sm:text-3xl flex items-center justify-center gap-3">
         <PixelFace size={40} />
-        아나바다 마켓
+        거지마켓
       </h1>
 
       <p className="pixel-border bg-pixel-orange/20 text-[11px] sm:text-xs px-3 py-1">

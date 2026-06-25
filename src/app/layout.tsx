@@ -3,8 +3,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 
 export const metadata: Metadata = {
-  title: "아나바다 마켓",
-  description: "귀여운 픽셀 아트 중고거래 마켓, 아나바다",
+  title: "거지마켓",
+  description: "귀여운 픽셀 아트 중고거래 마켓, 거지마켓",
 };
 
 export default function RootLayout({

@@ -16,7 +16,7 @@ export default async function Header() {
         className="text-base sm:text-lg tracking-tight flex items-center gap-2"
       >
         <PixelFace size={24} />
-        아나바다
+        거지마켓
       </Link>
 
       <nav className="flex items-center gap-3 text-xs sm:text-sm">
