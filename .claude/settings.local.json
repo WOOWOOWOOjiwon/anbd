@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /Users/gone0310/Dstudy/anbd status)",
+      "mcp__911fc131-e7a5-4ccb-b245-caeb2f757fd9__list_projects",
+      "mcp__911fc131-e7a5-4ccb-b245-caeb2f757fd9__get_project_url",
+      "mcp__911fc131-e7a5-4ccb-b245-caeb2f757fd9__get_publishable_keys",
+      "mcp__911fc131-e7a5-4ccb-b245-caeb2f757fd9__list_tables",
+      "Bash(npx --yes create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --no-turbopack)",
+      "Read(//Users/gone0310/**)",
+      "Read(//opt/homebrew/bin/**)",
+      "Bash(brew --version)",
+      "Bash(find / -maxdepth 4 -iname \"node\" -type f)",
+      "Bash(curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh)",
+      "Bash(bash)"
+    ]
+  }
+}
